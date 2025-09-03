@@ -1,9 +1,10 @@
 const { environment } = require('./standard-library');
 const last = (collection) => collection[collection.length - 1];
 
-/***
- * @param {}
- *
+/**
+ * Applies a function call by evaluating arguments and calling the function
+ * @param {Object} node - AST node representing a function call
+ * @returns {any} Result of the function call
  */
 const apply = (node) => {
   const fn = environment[node.name];
@@ -14,9 +15,11 @@ const apply = (node) => {
   return fn(...args);
 };
 
-/***
- * @param {}
- *
+/**
+ * Retrieves a value from the environment by identifier name
+ * @param {Object} node - AST node representing an identifier
+ * @returns {any} Value associated with the identifier
+ * @throws {ReferenceError} When identifier is not defined
  */
 const getIdentifier = (node) => {
   if (environment[node.name]) {
@@ -26,8 +29,9 @@ const getIdentifier = (node) => {
 };
 
 /**
- * @param { } -
- *
+ * Evaluates an AST node to produce a value
+ * @param {Object} node - AST node to evaluate
+ * @returns {any} Evaluated value
  */
 const evaluate = (node) => {
   if (node.type === 'Identifier') {

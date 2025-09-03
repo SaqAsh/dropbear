@@ -9,9 +9,10 @@ const {
 } = require('./identify');
 
 /**
+ * Converts a string input into an array of tokens
  * @param {string} input - The string to tokenize
- * @returns {{ type: string, value: string | number }[]} An array of token objects.
- **/
+ * @returns {{ type: string, value: string | number }[]} An array of token objects with type and value
+ */
 const tokenize = (input) => {
   const tokens = [];
   let cursor = 0;

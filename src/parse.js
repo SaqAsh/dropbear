@@ -3,9 +3,10 @@ const { specialForms } = require('./special-forms');
 const { peek, pop } = require('./utilities');
 
 /**
- * @param
- * @returns
- **/
+ * Recursively processes tokens to build nested expression structures
+ * @param {Array} tokens - Array of tokens to process
+ * @returns {Object|Array} Parsed expression or token
+ */
 const parenthesize = (tokens) => {
   const token = pop(tokens);
 
@@ -24,9 +25,10 @@ const parenthesize = (tokens) => {
 };
 
 /**
- * @param {any[]}
- * @returns
- **/
+ * Converts tokens into an Abstract Syntax Tree (AST)
+ * @param {Array|Object} tokens - Tokens to parse or single token
+ * @returns {Object} AST node representing the parsed structure
+ */
 const parse = (tokens) => {
   // we need to call the same function over again for each value, until we have only one value, which then we can identify
   if (Array.isArray(tokens)) {
