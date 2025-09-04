@@ -10,6 +10,19 @@ const babelVisitor = {
       node.callee = { type: 'Identifier', name: node.name };
     },
   },
+  VariableDeclaration: {
+    // This should be at the same level
+    enter({ node }) {
+      node.kind = 'let';
+      node.declarations = [
+        {
+          type: 'VariableDeclarator',
+          id: node.identifier,
+          init: node.assignment,
+        },
+      ];
+    },
+  },
 };
 
 /**

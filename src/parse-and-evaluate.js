@@ -10,7 +10,7 @@ const { transform } = require('./transform');
  * @param {string} input - Source code string
  * @returns {any} Evaluated result
  */
-const parseAndEvaluate = pipe(tokenize, parse, evaluate);
+const parseAndEvaluate = pipe(tokenize, parse, transform, evaluate);
 
 /**
  * Pipeline: tokenize → parse (without evaluation)

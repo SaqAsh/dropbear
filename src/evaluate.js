@@ -40,10 +40,16 @@ const evaluate = (node) => {
   if (node.type === 'CallExpression') {
     return apply(node);
   }
-
+  if (node.type === 'VariableDeclaration') {
+    return set(node);
+  }
   if (node.value) {
     return node.value;
   }
+};
+
+const set = (node) => {
+  environment[node.identifier.name] = node.assignment.value;
 };
 
 module.exports = { evaluate };
