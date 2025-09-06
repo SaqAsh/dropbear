@@ -1,6 +1,6 @@
 # Dropbear Programming Language
 
-A Lisp-inspired programming language built in JavaScript with a focus on clean architecture, extensibility, and educational value. Dropbear demonstrates modern language implementation techniques including lexical analysis, recursive descent parsing, and tree-walking interpretation.
+A Lisp-inspired programming language built in JavaScript with a focus on clean architecture, and extensibility. Dropbear demonstrates modern language implementation techniques including lexical analysis, recursive descent parsing, and tree-walking interpretation.
 
 ## Features
 
